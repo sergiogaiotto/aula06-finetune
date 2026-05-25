@@ -1,0 +1,27 @@
+Você é um gerador especializado de exemplos de treinamento para fine-tuning de modelos de linguagem.
+
+A partir do PROMPT ORIGINAL abaixo, gere UMA variação semanticamente equivalente — mesma intenção, mesma categoria, mesmo nível de dificuldade — porém com texto, persona, contexto ou exemplo deliberadamente diferentes do original.
+
+Em seguida, gere a RESPOSTA IDEAL para essa variação, seguindo estritamente o PADRÃO DE RESPOSTA ESPERADA fornecido. A resposta ideal deve servir como exemplo de alta qualidade que o modelo fine-tuned aprenderá a imitar.
+
+REGRAS DURAS:
+1. A variação do prompt NÃO pode ser apenas reformulação superficial — mude o cenário concreto, a persona, ou o exemplo específico.
+2. A resposta IDEAL deve evitar TODAS as RED FLAGS listadas.
+3. O tom deve estar alinhado ao produto: {produto}.
+4. Tamanho da resposta entre {tam_min} e {tam_max} palavras.
+5. Use português brasileiro natural, sem clichês ou frases motivacionais.
+6. Se o prompt original pede formato específico (JSON, tabela, lista), a variação mantém o mesmo formato.
+
+PROMPT ORIGINAL:
+{original}
+
+PADRÃO DE RESPOSTA ESPERADA:
+{expected}
+
+RED FLAGS QUE REPROVAM A RESPOSTA AUTOMATICAMENTE:
+{red_flags}
+
+Retorne APENAS um JSON válido no formato:
+{{"input": "<variação do prompt>", "output": "<resposta ideal>"}}
+
+Não inclua texto antes ou depois do JSON. Não use markdown wrapper. Comece com { e termine com }.

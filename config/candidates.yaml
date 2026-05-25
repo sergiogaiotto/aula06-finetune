@@ -1,0 +1,42 @@
+# config/candidates.yaml
+# 3 candidatos OpenAI deliberadamente diferentes em perfil (qualidade × custo × família).
+# Verifique disponibilidade rodando: python check_candidates.py
+#
+# Todos os modelos usam a mesma OPENAI_API_KEY (provider único).
+# Preços oficiais: https://openai.com/api/pricing
+candidates:
+  - name: gpt_4_1_mini
+    provider: openai
+    model_id: gpt-4.1-mini
+    perfil: "frontier-like, equilíbrio qualidade/custo, JSON mode, 1M context"
+    cost_per_1m_input_usd: 0.40
+    cost_per_1m_output_usd: 1.60
+    context_window: 1000000
+    notes: "Default da Aula 06 como teacher. Boa escolha de baseline."
+
+  - name: gpt_4_1_nano
+    provider: openai
+    model_id: gpt-4.1-nano
+    perfil: "ultra-barato, latência baixa"
+    cost_per_1m_input_usd: 0.10
+    cost_per_1m_output_usd: 0.40
+    context_window: 1000000
+    notes: "Baseline barato para checar se a tarefa precisa mesmo de modelo maior."
+
+  - name: gpt_4o_mini
+    provider: openai
+    model_id: gpt-4o-mini
+    perfil: "família 4o (multimodal), alternativa de geração"
+    cost_per_1m_input_usd: 0.15
+    cost_per_1m_output_usd: 0.60
+    context_window: 128000
+    notes: "Diversidade de família vs 4.1; mesma stack OpenAI."
+
+# Juiz LLM — não é candidato, é avaliador.
+# Regra: o juiz NUNCA pode ser o mesmo modelo que está sendo avaliado.
+judge:
+  provider: openai
+  model_id: gpt-4.1
+  cost_per_1m_input_usd: 2.00
+  cost_per_1m_output_usd: 8.00
+  notes: "Frontier OpenAI; juiz padrão da Aula 06. Custo total ~USD 0.10-0.30 por run completa."

@@ -1,0 +1,61 @@
+# config/rubric_designmind.yaml
+# Rubrica de avaliação para o produto DesignMind AI.
+
+product: designmind
+version: 1.0
+
+dimensions:
+  - name: rigor_analitico
+    label: "Rigor analítico"
+    weight: 0.25
+    description: "Distinguir fato de hipótese, dado de opinião, sintoma de causa-raiz."
+    scale:
+      "1": "Mistura opinião e fato sem qualificação; trata sintomas como causas."
+      "2": "Algum rigor mas afirmações categóricas sem evidência."
+      "3": "Distingue parcialmente; faltam ressalvas."
+      "4": "Boa distinção, com qualificadores apropriados."
+      "5": "Distingue rigorosamente; aponta limites do que pode afirmar."
+
+  - name: divergencia_convergencia
+    label: "Qualidade divergente/convergente"
+    weight: 0.25
+    description: "Diversidade real nas ideias; critério explícito na convergência."
+    scale:
+      "1": "Variantes da mesma ideia; convergência sem critério."
+      "2": "Pouca diversidade; critério vago."
+      "3": "Diversidade média; critério presente mas raso."
+      "4": "Boa diversidade; critério claro com pesos."
+      "5": "Ampla diversidade (ambição/tipo); critério rigoroso e justificado."
+
+  - name: acionabilidade
+    label: "Acionabilidade"
+    weight: 0.20
+    description: "Próximo passo concreto, mensurável, com prazo. Não termina em conselho vago."
+    scale:
+      "1": "Apenas descrição; sem próximo passo."
+      "2": "Próximo passo vago ('faça pesquisa de mercado')."
+      "3": "Próximo passo concreto sem métrica."
+      "4": "Concreto e mensurável, falta prazo."
+      "5": "Próximo passo concreto, mensurável, com prazo definido."
+
+  - name: conformidade_formato
+    label: "Conformidade de formato"
+    weight: 0.15
+    description: "JSON válido quando pedido; tabela quando pedida; quantidade exata."
+    scale:
+      "1": "Ignora formato pedido."
+      "2": "Tenta o formato com quebras (JSON inválido, contagem errada)."
+      "3": "Formato correto mas com defeitos cosméticos."
+      "4": "Formato bem entregue."
+      "5": "Formato preciso, sem texto extra, parseable diretamente."
+
+  - name: originalidade
+    label: "Originalidade"
+    weight: 0.15
+    description: "Vai além do óbvio. Pelo menos um ângulo não-trivial."
+    scale:
+      "1": "100% conteúdo de livro-texto / wikipedia-tier."
+      "2": "Maioria genérico, 1 detalhe específico."
+      "3": "Mistura genérico e específico."
+      "4": "Maioria específico, 1 ângulo não-óbvio."
+      "5": "Vários ângulos não-óbvios; análise contraintuitiva."
